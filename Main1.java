@@ -1,4 +1,4 @@
-  class Locker { 1    `   `   11          
+class Locker {
     private int pin = 1234;
     private boolean isOpen = false;
 
@@ -17,10 +17,10 @@
         } else {
             System.out.println("Locker is closed");
         }
-    }   90-ig]++         
+    }
 }
 
-public class Main {
+public class Main1 {
     public static void main(String[] args) {
         Locker locker = new Locker(); 
 
