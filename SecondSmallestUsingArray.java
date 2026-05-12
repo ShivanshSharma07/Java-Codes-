@@ -21,7 +21,7 @@ public class SecondSmallestUsingArray {
 
         for (int i = 0; i < n; i++) {
 
-            if (arr[i] < smallest) {
+            if (arr[i] < smallest) {git push
                 secondSmallest = smallest;
                 smallest = arr[i];
             } 
