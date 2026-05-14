@@ -1,37 +1,40 @@
-import java.util.Scanner;
+class Locker {
+    private int pin = 1234;
+    private boolean isOpen = false;
 
-public class SecondSmallestUsingArray {
+    public void openLocker(int enteredPin) {
+        if (enteredPin == pin) {
+            isOpen = true;
+            System.out.println("Locker opened");
+        } else {
+            System.out.println("Wrong pin");
+        }
+    }
+
+    public void checkStatus() {
+        if (isOpen) {
+            System.out.println("Locker is open");
+        } else {
+            System.out.println("Locker is closed");
+        }
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
+      
+        Locker locker = new Locker();
 
-        Scanner sc = new Scanner(System.in);
+    
+        locker.checkStatus();
 
-        System.out.print("Enter size of array: ");
-        int n = sc.nextInt();
 
-        int[] arr = new int[n];
+        locker.openLocker(1111);
 
-        System.out.println("Enter array elements:");
+    
+        locker.openLocker(1234);
 
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
-        }
-
-        int smallest = Integer.MAX_VALUE;
-        int secondSmallest = Integer.MAX_VALUE;
-
-        for (int i = 0; i < n; i++) {
-
-            if (arr[i] < smallest) {
-                secondSmallest = smallest;
-                smallest = arr[i];
-            } 
-            else if (arr[i] < secondSmallest && arr[i] != smallest) {
-                secondSmallest = arr[i];
-            }
-        }
-
-        System.out.println("Second Smallest Number = " + secondSmallest);
-
-        sc.close();
+      
+        locker.checkStatus();
     }
 }
